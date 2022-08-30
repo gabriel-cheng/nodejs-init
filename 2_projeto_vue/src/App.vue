@@ -26,3 +26,10 @@
         }
     }
 </script>
+
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+</style>

@@ -14,11 +14,18 @@
             setTimeout(() => {
                 this.nome = "Gabriel"
             }, 1000)
+
+            this.lifeCycle();
         },
         mounted() {
             setTimeout(() => {
                 this.nome = "Carvalho"
             }, 3000);
+        },
+        methods: {
+            lifeCycle() {
+                console.log("Executou");
+            }
         }
     }
 </script>
