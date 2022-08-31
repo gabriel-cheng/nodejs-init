@@ -1,15 +1,12 @@
 <template>
     <div>
         <h1>Meu formulário</h1>
-        <form action="">
+        <form action="/teste" @submit="enviarForm($event)">
             <div>
-                <InputText />
+                <input type="text" v-model="name">
             </div>
             <div>
-                <InputText />
-            </div>
-            <div>
-                <InputText />
+                <input type="text" v-model="email">
             </div>
             <div>
                 <Submit />
@@ -25,8 +22,26 @@
     export default {
         name: 'Form',
         components: {
-    InputText,
-    Submit
-}
+            InputText,
+            Submit
+        },
+        data() {
+            return {
+                name: '',
+                email: ''
+            }
+        },
+        methods: {
+            enviarForm(e) {
+                e.preventDefault();
+
+                const name = this.name;
+                const email = this.email;
+
+                console.log('Envio bloqueado');
+                console.log(`O nome é: ${name}`);
+                console.log(`O email é: ${email}`);
+            }
+        }
     }
 </script>

@@ -11,7 +11,7 @@
             <li v-for="(tech) in frontend_technologies" v-bind:key="tech.id">{{tech.language}}</li>
         </ul>
         <div>
-            <button @click="showEmail">{{textoBotao}}</button>
+            <button @click="showEmail()">{{textoBotao}}</button>
         </div>
         <p v-show="mostrar_email">Mande uma pensagem para: {{email}}</p>
         <p>Para acessar meu portfólio, basta clicar <a v-bind:href="meu_link" target="_blank">aqui</a></p>
