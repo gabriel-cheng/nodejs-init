@@ -2,11 +2,13 @@
     <div>
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else>Estou em busca de novas oportunidades</p>
-        <p>Utilizo as seguintes tecnologias: </p>
+        <p>Utilizo as seguintes tecnologias para Back-end:</p>
         <ul>
-            <li>Javascript</li>
-            <li>Python</li>
-            <li>Php</li>
+            <li v-for="(items, index) in backend_technologies" v-bind:key="index">{{items}}</li>
+        </ul>
+        <p>Ferramentas de Front-end:</p>
+        <ul>
+            <li v-for="(tech) in frontend_technologies" v-bind:key="tech.id">{{tech.language}}</li>
         </ul>
         <div>
             <button @click="showEmail">{{textoBotao}}</button>
@@ -27,7 +29,14 @@
                 esta_trabalhando: false,
                 mostrar_email: true,
                 email: 'gabriel@hotmail.com',
-                meu_link: 'http://gabrielcarvalho.herokuapp.com'
+                meu_link: 'http://gabrielcarvalho.herokuapp.com',
+                textoBotao: 'Esconder email',
+                backend_technologies: ['Javascript', 'php', 'python'],
+                frontend_technologies: [
+                    {id: 1, language: 'HTML'},
+                    {id: 2, language: 'CSS'},
+                    {id: 3, language: 'JAVASCRIPT'}
+                ]
             }
         },
         components: {
@@ -35,8 +44,6 @@
         },
         methods: {
             showEmail() {
-                this.textoBotao = 'Esconder email';
-
                 if(this.mostrar_email) {
                     this.textoBotao = 'Mostrar email';
                     this.mostrar_email = false;
