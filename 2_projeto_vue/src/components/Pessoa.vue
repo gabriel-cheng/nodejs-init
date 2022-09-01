@@ -1,12 +1,3 @@
-<template>
-    <div>
-        <hr>
-        <h2>Esta é a descrição da pessoa: {{nome}}</h2>
-        <Info />
-        <Form />
-    </div>
-</template>
-
 <script>
     import Info from './Info.vue';
     import Form from './form/Form.vue';
@@ -15,7 +6,8 @@
     name: "Pessoa",
     data() {
         return {
-            nome: "Gabriel Carvalho"
+            nome: 'Gabriel Carvalho',
+            email: 'gabriel@hotmail.com'
         };
     },
     components: {
@@ -24,3 +16,12 @@
     }
 }
 </script>
+
+<template>
+    <div>
+        <hr>
+        <h2>Esta é a descrição da pessoa: {{nome}}</h2>
+        <Info :email="email"/>
+        <Form />
+    </div>
+</template>

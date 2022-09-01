@@ -1,14 +1,14 @@
 <script>
     export default {
-        name: "Reutilizacao",
+        name: 'Reutilizacao',
         data() {
             return {
                 ativou: false
             }
         },
-        mehods: {
+        methods: {
             ativar() {
-                this.ativou = !this.ativou;
+                this.ativou = !this.ativou
             }
         }
     }
@@ -16,7 +16,7 @@
 
 <template>
     <div>
-        <button @click="ativar()">Clique aqui!</button>
-        <span v-show="ativou()">Ativado!</span>
+        <button @click="ativar">Clique aqui!</button>
+        <span v-show="ativou">Ativado!</span>
     </div>
 </template>

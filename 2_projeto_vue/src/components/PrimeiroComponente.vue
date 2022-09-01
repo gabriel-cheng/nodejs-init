@@ -13,15 +13,15 @@
 
     export default {
         name: 'PrimeiroComponente',
+        components: {
+            MultiplosEventos,
+            Reutilizacao
+        },
         data() {
             return {
                 nome: "Gabriel Carvalho",
                 profissao: "Desenvolvedor Web"
             }
         },
-        components: {
-            MultiplosEventos,
-            Reutilizacao
-        }
     }
 </script>
